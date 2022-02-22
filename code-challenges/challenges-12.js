@@ -103,12 +103,11 @@ const cvsFiltration = (arr) => {
 //
 
 const vowelsFiltration = (arr) => {
-  // write your code here
-
   const vowel = arr.filter((word) => {
     return !word.match(/[aeiou]/g);
   });
   return vowel;
+  // write your code here
 };
 // -------------------------------------------------------------------------------------------------------
 
