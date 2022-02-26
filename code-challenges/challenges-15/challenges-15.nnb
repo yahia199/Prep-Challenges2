@@ -1,0 +1,25 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "// Equality in an array \n\nfunction equalizeArray(arr) {\n  let obj = {};\n  let maxCount = 0;\n  for (let num of arr) {\n    obj[num] = obj[num] + 1 || 1;\n  }\n  for (let value in obj) {\n    if (obj[value] > maxCount) {\n      maxCount = obj[value];\n    }\n  }\n  return arr.length - maxCount;\n}\n\n\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Halloween sale\n\nfunction howManyGames(p, d, m, s) {\n  let count = 0;\n  while (s >= p) {\n    count++;\n    s -= p;\n    p = Math.max(p - d, m);\n  }\n  return count;\n}\n\n\n\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Sherlock and squares\n\nfunction squares(a, b) {\n  var lower = Math.ceil(Math.sqrt(a));\n\n  var higher = Math.floor(Math.sqrt(b));\n\n  if (lower > higher) return 0;\n\n  var count = 0;\n\n  for (var i = lower; i <= higher; i++) {\n    if (lower <= i * i <= higher) {\n      count++;\n    }\n  }\n\n  return count;\n}\n\n\n\n\n\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
