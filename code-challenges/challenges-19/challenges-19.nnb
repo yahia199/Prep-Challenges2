@@ -1,0 +1,25 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "// Append and delete\nfunction appendAndDelete(s, t, k) {\n\n    var end = 0;\n\n    for (var i = 0; i < Math.min(t.length, s.length); i++) {\n        if (s[i] == t[i]) {\n            end++;\n        } else {\n            break;\n        }\n    }\n\n    var maxIter = s.length + t.length;\n    var minIter = maxIter - (2 * end);\n\n\n    if ((k >= minIter) & ((k - minIter) % 2 == 0)) {\n        return \"Yes\";\n    } else if (k >= maxIter) {\n        return \"Yes\";\n    } else {\n        return \"No\";\n    }\n\n}\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Encryption \n\n\nfunction encryption(s) {\n    // Write your code here\n    let nospace = s.replace(/\\s/g, \"\");\n    let row = Math.floor(Math.sqrt(nospace.length));\n    let col = Math.ceil(Math.sqrt(nospace.length));\n    if (row * col < nospace.length) {\n        row++;\n    }\n    var newstr = \"\";\n    for (let i = 0; i < col; i++) {\n        let jump = 0;\n        while (i + jump < nospace.length) {\n            newstr += nospace[i + jump]\n            jump += col;\n        }\n        newstr += \" \";\n\n    }\n    return newstr;\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//The Time in Words\nfunction timeInWords(h, m) {\n    // Write your code here\n    const nums = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'quarter', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'twenty one', 'twenty two', 'twenty three', 'twenty four', 'twenty five', 'twenty six', 'twenty seven', 'twenty eight', 'twenty nine', 'half'];\n    let inWords = '';\n    if (m === 0) {\n        inWords = (nums[h] + ' o\\' clock')\n    } else if (m === 1) {\n        inWords = (nums[m] + ' minute past ' + nums[h])\n    } else if (m === 15 || m === 30) {\n        inWords = (nums[m] + ' past ' + nums[h])\n    } else if (m === 45) {\n        inWords = (nums[60 - m] + ' to ' + nums[h + 1])\n    } else if (m < 30) {\n        inWords = (nums[m] + ' minutes past ' + nums[h])\n    } else {\n        inWords = (nums[60 - m] + ' minutes to ' + nums[h + 1])\n    }\n    return inWords;\n}\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
